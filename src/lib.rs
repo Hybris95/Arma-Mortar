@@ -943,9 +943,9 @@ pub fn calculate_solution_with_dispersion(
 /// # Exemple
 ///
 /// ```
-/// use mortar::{TargetPosition, TargetType, apply_correction};
+/// use mortar::{TargetPosition, TargetType, apply_correction, AmmoKind};
 ///
-/// let target = TargetPosition::new("T1".to_string(), 100.0, 500.0, 300.0, TargetType::Infanterie);
+/// let target = TargetPosition::new("T1".to_string(), 100.0, 500.0, 300.0, TargetType::Infanterie, AmmoKind::He);
 ///
 /// // L'obus est tombé 50m au Nord et 30m à l'Est de la cible
 /// let corrected = apply_correction(&target, -50.0, 30.0);
