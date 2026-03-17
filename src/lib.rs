@@ -406,7 +406,14 @@ impl TargetPosition {
     /// * `y` - Coordonnée Y en mètres
     /// * `target_type` - Type tactique de la cible
     /// * `ammo_type` - Type de munition à employer
-    pub fn new(name: String, elevation: f64, x: f64, y: f64, target_type: TargetType, ammo_type: AmmoKind) -> Self {
+    pub fn new(
+        name: String,
+        elevation: f64,
+        x: f64,
+        y: f64,
+        target_type: TargetType,
+        ammo_type: AmmoKind,
+    ) -> Self {
         TargetPosition {
             name,
             elevation,
@@ -1090,7 +1097,14 @@ mod tests {
         dispersions.insert((AmmoKind::He, 2), 39.0);
 
         let mortar = MortarPosition::new("M1".into(), 100.0, 0.0, 0.0);
-        let target = TargetPosition::new("T1".into(), 50.0, 500.0, 300.0, TargetType::Infanterie, AmmoKind::He);
+        let target = TargetPosition::new(
+            "T1".into(),
+            50.0,
+            500.0,
+            300.0,
+            TargetType::Infanterie,
+            AmmoKind::He,
+        );
 
         let sol = calculate_solution_with_dispersion(&mortar, &target, &ballistics, &dispersions);
 
